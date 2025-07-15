@@ -97,9 +97,33 @@ src/
         └── application-test.properties   // exemplo de outro perfil
 ```
 
+## Roadmap
+
+Planejamos continuar evoluindo o `Springify` com base no uso da comunidade e sugestões recebidas. Aqui estão algumas ideias previstas:
+
+- [x] Geração interativa de perfis `.yml` e `.properties`
+- [x] Compatibilidade com múltiplos bancos (PostgreSQL, MySQL, Oracle, H2)
+- [x] Binários prontos para macOS, Linux e Windows
+- [ ] Suporte multi-idioma no CLI
+- [ ] Traduções da documentação (inglês, espanhol, francês...)
+- [ ] Comando `springify init` para gerar estrutura completa do projeto
+- [ ] Geração automatizada de `Dockerfile` e `docker-compose.yml`
+- [ ] Customização via flags (sem perguntas interativas)
+- [ ] Lançamento no Homebrew e Chocolatey (instalação via gerenciador)
+- [ ] Testes automatizados e benchmark de performance
+
+> Sinta-se à vontade para sugerir novas ideias ou abrir Pull Requests.  
+> Esse projeto cresce junto com quem usa
+
 ## Comunidade
 
 Esse projeto é uma ponte entre a comunidade Go (ferramentas CLI) e a comunidade Spring Boot. Criado para devs que valorizam produtividade, automação e simplicidade na configuração de ambientes.
+
+## Contribuições
+
+Quer colaborar com o projeto?
+
+Confira as diretrizes em [CONTRIBUTING.md](CONTRIBUTING.md)
 
 ## Licença
 
