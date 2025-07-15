@@ -6,6 +6,13 @@ Ideal para devs que querem automatizar a criação dos arquivos `application.yml
 
 ---
 
+## Tecnologias utilizadas
+
+O `springify` foi desenvolvido em **Go (Golang)**, uma linguagem moderna e eficiente voltada para ferramentas robustas e multi-plataforma.
+
+> A escolha pelo Go garante binários leves, rápidos e compatíveis com macOS, Linux e Windows — sem dependências externas.
+
+
 ## Funcionalidades
 
 - Criação do arquivo principal: `application.yml` ou `application.properties`
@@ -18,31 +25,35 @@ Ideal para devs que querem automatizar a criação dos arquivos `application.yml
 
 ## Instalação
 
-### ➤ Linux
+### ➤ macOS / Linux (instalação automática)
 
 ```bash
-curl -LO https://github.com/matheusvaldevino/springify/releases/latest/download/springify-linux-amd64.tar.gz
-tar -xzf springify-linux-amd64.tar.gz
-chmod +x springify-linux-amd64
-mv springify-linux-amd64 /usr/local/bin/springify
+curl -sSL https://raw.githubusercontent.com/matheusvsdev/springify/main/install.sh | bash
 ```
 
-### ➤ macOS(M1/M2)
+Este instalador vai:
+
+- Detectar seu sistema e arquitetura
+- Baixar o binário correto da versão mais recente
+- Mover o executável para /usr/local/bin/springify
+- Validar se o comando foi instalado com sucesso
+
+Depois disso, você pode usar springify direto no terminal.
+
+### ➤ Windows (instalação manual)
+
+1. Baixe o binário .zip pela aba Releases ou diretamente:
 
 ```bash
-curl -LO https://github.com/matheusvaldevino/springify/releases/latest/download/springify-darwin-arm64.tar.gz
-tar -xzf springify-darwin-arm64.tar.gz
-chmod +x springify-darwin-arm64
-mv springify-darwin-arm64 /usr/local/bin/springify
+Invoke-WebRequest -Uri https://github.com/matheusvsdev/springify/releases/latest/download/springify-windows-amd64.zip -OutFile springify.zip
 ```
-
-### ➤ Windows(PowerShell)
-
+2. Extraia e renomeie:
 ```bash
-Invoke-WebRequest -Uri https://github.com/matheusvaldevino/springify/releases/latest/download/springify-windows-amd64.zip -OutFile springify.zip
 Expand-Archive -Path springify.zip -DestinationPath .
 Rename-Item -Path .\springify-windows-amd64.exe -NewName springify.exe
 ```
+
+(Opcional) Adicione a pasta onde está o springify.exe ao seu PATH para usar de qualquer lugar no terminal.
 
 ## Como Usar
 
@@ -65,6 +76,14 @@ O CLI então criará:
 - O arquivo principal `application.properties` ou `application.yml`
 - O perfil escolhido com configurações específicas de banco
 
+## Prévia do CLI
+
+Veja como o springify interage com você no terminal:
+
+> O CLI guia você por perguntas rápidas — gerando perfis de ambiente com clareza e agilidade.
+
+![Interface CLI](springify.png)
+
 ## Estrutura gerada
 
 Os arquivos serão criados dentro da pasta resources do projeto Java Spring Boot
@@ -84,10 +103,25 @@ Esse projeto é uma ponte entre a comunidade Go (ferramentas CLI) e a comunidade
 
 ## Licença
 
-Este projeto está sob a licença CC BY-NC 4.0.
+Este projeto está sob a licença **Creative Commons BY-NC 4.0 (Atribuição – Não Comercial)**.
 
-Você pode baixar, estudar e contribuir — mas não pode revendê-lo, distribuí-lo com outra autoria, ou publicá-lo como se fosse seu.
+Você pode:
+
+- Usar a ferramenta livremente em projetos pessoais, acadêmicos ou empresariais como auxiliar
+- Modificar e estudar o código
+
+Você **não pode**:
+
+- Vender ou redistribuir o código do `springify`
+- Atribuir a ferramenta a terceiros como se fosse própria
+
+> O `springify` foi criado para facilitar o trabalho de quem desenvolve com Spring Boot.  
+> Pode ser usado como utilitário auxiliar em empresas — exatamente como se usaria `npm install` ou uma imagem Docker.  
+> A única exigência é **manter a atribuição** e não **revender ou publicar como se fosse seu**.  
+> A licença existe apenas para proteger a autoria, não para limitar o uso legítimo da comunidade.
+
+Saiba mais: [https://creativecommons.org/licenses/by-nc/4.0](https://creativecommons.org/licenses/by-nc/4.0)
 
 Criado por [Matheus Valdevino](https://github.com/matheusvsdev)
 
----# springify
+---
