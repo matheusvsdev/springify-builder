@@ -1,0 +1,32 @@
+# Nome da aplicacao usado pelo Spring e outros modulos
+spring:
+  application:
+    name: {{.AppName}}
+
+  # URL de conexao com o banco de dados
+  datasource:
+    url: jdbc:{{.Db}}://{{.Host}}:{{.Port}}/{{.DbName}}
+
+    # Credenciais do Banco de Dados (recomendado usar variaveis de ambiente em producao)
+    username: ${SQL_USERNAME}
+    password: ${SQL_PASSWORD}
+
+    # Driver JDBC especifico do banco (ex: org.postgresql.Driver)
+    driver-class-name: {{.Driver}}
+
+  # Estrategia de geracao do schema:
+  # update = cria/atualiza; none = nao altera; create = cria tudo do zero
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+    # Exibir SQL gerado no console
+    show-sql: true
+
+    # Formatar o SQL impresso (melhor legibilidade)
+    properties:
+      hibernate:
+        format_sql: true
+
+    # Dialeto usado pelo Hibernate (ex: PostgreSQLDialect, MySQLDialect...)
+    database-platform: org.hibernate.dialect.{{.Database}}Dialect

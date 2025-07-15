@@ -18,31 +18,35 @@ Ideal para devs que querem automatizar a criação dos arquivos `application.yml
 
 ## Instalação
 
-### ➤ Linux
+### ➤ macOS / Linux (instalação automática)
 
 ```bash
-curl -LO https://github.com/matheusvaldevino/springify/releases/latest/download/springify-linux-amd64.tar.gz
-tar -xzf springify-linux-amd64.tar.gz
-chmod +x springify-linux-amd64
-mv springify-linux-amd64 /usr/local/bin/springify
+curl -sSL https://raw.githubusercontent.com/matheusvaldevino/springify/main/install.sh | bash
 ```
 
-### ➤ macOS(M1/M2)
+Este instalador vai:
 
-```bash
-curl -LO https://github.com/matheusvaldevino/springify/releases/latest/download/springify-darwin-arm64.tar.gz
-tar -xzf springify-darwin-arm64.tar.gz
-chmod +x springify-darwin-arm64
-mv springify-darwin-arm64 /usr/local/bin/springify
-```
+- Detectar seu sistema e arquitetura
+- Baixar o binário correto da versão mais recente
+- Mover o executável para /usr/local/bin/springify
+- Validar se o comando foi instalado com sucesso
 
-### ➤ Windows(PowerShell)
+Depois disso, você pode usar springify direto no terminal.
+
+### ➤ Windows (instalação manual)
+
+1. Baixe o binário .zip pela aba Releases ou diretamente:
 
 ```bash
 Invoke-WebRequest -Uri https://github.com/matheusvaldevino/springify/releases/latest/download/springify-windows-amd64.zip -OutFile springify.zip
+```
+2. Extraia e renomeie:
+```bash
 Expand-Archive -Path springify.zip -DestinationPath .
 Rename-Item -Path .\springify-windows-amd64.exe -NewName springify.exe
 ```
+
+(Opcional) Adicione a pasta onde está o springify.exe ao seu PATH para usar de qualquer lugar no terminal.
 
 ## Como Usar
 
@@ -64,6 +68,14 @@ O CLI então criará:
 
 - O arquivo principal `application.properties` ou `application.yml`
 - O perfil escolhido com configurações específicas de banco
+
+## Prévia do CLI
+
+Veja como o springify interage com você no terminal:
+
+> O CLI guia você por perguntas rápidas — gerando perfis de ambiente com clareza e agilidade.
+
+![Interface CLI](springify.png)
 
 ## Estrutura gerada
 
@@ -90,4 +102,4 @@ Você pode baixar, estudar e contribuir — mas não pode revendê-lo, distribu�
 
 Criado por [Matheus Valdevino](https://github.com/matheusvsdev)
 
----# springify
+---
