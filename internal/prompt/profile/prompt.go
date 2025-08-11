@@ -1,4 +1,4 @@
-package prompt
+package promptProfile
 
 import (
 	"fmt"

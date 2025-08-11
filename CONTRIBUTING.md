@@ -1,6 +1,6 @@
-# Contribuindo com o `Springify`
+# Contribuindo com o `Springify Builder`
 
-Ficamos felizes com seu interesse em contribuir! O `Springify` é uma ferramenta open source que cresce com a comunidade — toda contribuição é bem-vinda.
+Ficamos felizes com seu interesse em contribuir! O `Springify Builder` é uma ferramenta open source que cresce com a comunidade — toda contribuição é bem-vinda.
 
 ## Como começar
 

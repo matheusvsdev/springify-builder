@@ -1,0 +1,16 @@
+
+{{.ServiceName}}:
+  image: {{.ImageName}}
+  restart: always
+  shm_size: 128mb
+  container_name: {{.ContainerName}}
+  volumes:
+    - ./{{.ImageName}}:{{.VolumePath}}
+  environment:
+{{- range $key, $value := .EnvVars }}
+    {{$key}}: {{$value}}
+{{- end }}
+  ports:
+    - "{{.Port}}:{{.InternalPort}}"
+  networks:
+    - {{.NetworkName}}

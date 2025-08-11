@@ -1,9 +1,9 @@
 #!/bin/bash
 set -e
 
-BINARY_NAME="springify"
+BINARY_NAME="syb"
 REPO_OWNER="matheusvsdev"
-REPO_NAME="springify"
+REPO_NAME="springify-builder"
 
 echo "Iniciando instalação do $BINARY_NAME..."
 
