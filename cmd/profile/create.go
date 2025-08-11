@@ -6,7 +6,7 @@ import (
 
 	"github.com/matheusvsdev/springify/internal/config"
 	"github.com/matheusvsdev/springify/internal/model"
-	"github.com/matheusvsdev/springify/internal/prompt"
+	promptProfile "github.com/matheusvsdev/springify/internal/prompt/profile"
 	"github.com/matheusvsdev/springify/internal/service"
 	"github.com/matheusvsdev/springify/internal/template"
 	"github.com/spf13/cobra"
@@ -16,8 +16,8 @@ var CreateCmd = &cobra.Command{
 	Use:   "create",
 	Short: "Cria perfil de configuração (test, dev, prod)",
 	Run: func(cmd *cobra.Command, args []string) {
-		format := prompt.AskFormat()
-		appName := prompt.AskAppName()
+		format := promptProfile.AskFormat()
+		appName := promptProfile.AskAppName()
 
 		baseTemplate := strings.TrimPrefix(format, ".") + ".tmpl"
 		baseTmpl, err := template.Load(baseTemplate)
@@ -32,7 +32,7 @@ var CreateCmd = &cobra.Command{
 			return
 		}
 
-		env := prompt.AskEnv()
+		env := promptProfile.AskEnv()
 
 		var dbType string
 		var dbConfig config.DbConfig
@@ -42,7 +42,7 @@ var CreateCmd = &cobra.Command{
 			dbType = "h2"
 			dbConfig = config.DbDefaults["h2"]
 		} else {
-			dbType = prompt.AskDbType()
+			dbType = promptProfile.AskDbType()
 			dbConfig = config.DbDefaults[strings.ToLower(dbType)]
 
 			if dbConfig.Dialect == "" {
@@ -50,9 +50,9 @@ var CreateCmd = &cobra.Command{
 				return
 			}
 
-			host = prompt.AskHost()
-			port = prompt.AskPort(dbConfig.Port)
-			dbName = prompt.AskDbName()
+			host = promptProfile.AskHost()
+			port = promptProfile.AskPort(dbConfig.Port)
+			dbName = promptProfile.AskDbName()
 		}
 
 		envTemplate := fmt.Sprintf("%s-%s.tmpl", env, strings.TrimPrefix(format, "."))
